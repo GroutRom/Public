@@ -1,0 +1,66 @@
+Robot lunaire 
+
+// {
+package com.egaetan;
+// }
+
+/*******
+ * Lire les donnees depuis System.in
+ * Utilise System.out.println pour afficher le resultat
+ * Utilise System.err.println pour afficher des donnees de debug
+ * ***/
+import java.util.*;
+
+public class RobotsLunaires {
+   
+	public void main() {
+		String  line;
+		Scanner sc = new Scanner(System.in);
+        String maxXY = sc.nextLine();
+
+		while(sc.hasNextLine()) {
+            line = sc.nextLine();
+            int posX = Integer.parseInt(line.split(" ")[0]);
+            int posY = Integer.parseInt(line.split(" ")[1]);
+            String orientation = line.split(" ")[2];
+            String[] ordres = sc.nextLine().split("");
+
+            for (int i=0; i<ordres.length; i++){
+                if(!ordres[i].equals("M")){
+                    orientation = calculateOrientation(orientation,ordres[i]);
+                }
+                else{
+                    if (orientation.equals("N")){
+                        posY++;
+                    }
+                    else if (orientation.equals("W")){
+                        posX--;
+                    }
+                    else if (orientation.equals("S")){
+                        posY--;
+                    }
+                    else if (orientation.equals("E")){
+                        posX++;
+                    }
+                }
+            }
+	        System.out.println(posX + " " + posY + " " + orientation);
+		}
+
+
+    public String calculateOrientation(String origin, String ordre) {
+        switch (origin) {
+            case "N" :
+                return (ordre.equals("L") ? "W" : "E");
+            case "E" :
+                return (ordre.equals("L") ? "N" : "S");
+            case "S" :
+                return (ordre.equals("L") ? "E" : "W");
+            case "W" :
+                return (ordre.equals("L") ? "S" : "N");
+            default : return "erreur";
+        }
+    }
+
+}
+

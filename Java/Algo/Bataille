@@ -1,0 +1,39 @@
+bataille :
+
+// {
+package com.egaetan;
+// }
+
+/*******
+ * Lire les donnees depuis System.in
+ * Utilise System.out.println pour afficher le resultat
+ * Utilise System.err.println pour afficher des donnees de debug
+ * ***/
+import java.util.*;
+
+public class Bataille {
+	
+	public void main() {
+		String  line;
+		int nbTurn, cardPlayerA, cardPlayerB, scorePlayerA=0, scorePlayerB =0;
+		Scanner sc = new Scanner(System.in);
+		nbTurn = sc.nextInt();
+		while(sc.hasNextLine()) {
+			line = sc.nextLine();
+			/* Lisez les données et effectuez votre traitement */
+			if (line.contains(" ")) {
+				cardPlayerA = Integer.parseInt(line.split(" ")[0]);
+				cardPlayerB = Integer.parseInt(line.split(" ")[1]);
+				
+				if(cardPlayerA > cardPlayerB){
+					scorePlayerA++;
+				}
+				else if(cardPlayerB > cardPlayerA){
+					scorePlayerB++;
+				}
+			}
+		}
+	/* Vous pouvez aussi effectuer votre traitement une fois que vous avez lu toutes les données.*/
+		System.out.println(scorePlayerA > scorePlayerB ? "A": "B");
+	}
+}

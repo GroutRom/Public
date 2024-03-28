@@ -1,0 +1,35 @@
+Prix le plus bas
+
+//{
+package com.egaetan;
+//}
+
+/*******
+* Lire les donnees depuis System.in
+* Utilise System.out.println pour afficher le resultat
+* Utilise System.err.println pour afficher des donnees de debug
+* ***/
+import java.util.*;
+
+public class PrixLePlusBas {
+	
+	public void main() {
+        int min = Integer.MAX_VALUE;
+		Scanner sc = new Scanner(System.in);
+        int nbProducts = sc.nextInt();
+        sc.nextLine();
+        String searchProduct = sc.nextLine();
+		
+        while(nbProducts > 0){
+            String nomProduct = sc.next();
+            int priceProduct = sc.nextInt();
+            if(nomProduct.equals(searchProduct) && priceProduct < min){
+                min = priceProduct;
+            }
+            nbProducts--;
+        }
+        System.out.println(min);
+
+	}
+}
+

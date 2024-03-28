@@ -1,0 +1,62 @@
+hydroponie
+
+// {
+package com.egaetan;
+// }
+/*******
+ * Lire les donnees depuis System.in
+ * Utilise System.out.println pour afficher le resultat
+ * Utilise System.err.println pour afficher des donnees de debug
+ * ***/
+import java.util.*;
+
+public class Hydroponie {
+	
+	public  void main() {
+		Scanner sc = new Scanner(System.in);
+        int taille = sc.nextInt();
+        sc.nextLine();
+        char[][] grille = new char [taille][taille];
+        for (int i =0; i<taille; i++){
+            grille[i] = sc.nextLine().toCharArray();
+        }
+			/* Lisez les données et effectuez votre traitement */
+        int caseCulti = comptCaseVide(taille,grille);
+
+        System.out.println(caseCulti);
+	/* Vous pouvez aussi effectuer votre traitement une fois que vous avez lu toutes les données.*/
+
+	}
+
+    public static int comptCaseVide(int length, char[][] board ) {
+        int nbCaseVide = 0;
+        for(int i = 0; i < length; i++){
+            for(int j = 0; j < length; j++){
+                if(board[i][j] == '.' && !evaporateurAdj(board,length,i,j)){
+                    nbCaseVide++;
+                }
+            }
+        }
+        return nbCaseVide;
+        
+    }
+
+    public static boolean evaporateurAdj(char[][] board, int length, int x, int y){
+        int[][] caseVoisines = {
+            {0,1},
+            {0,-1},
+            {1,0},
+            {-1,0},
+        };
+
+        for(int[] caseVoisine : caseVoisines){
+            int newX = x + caseVoisine[0];
+            int newY = y + caseVoisine[1];
+
+            if(newX>=0 && newX<length && newY>=0 && newY<length && board[newX][newY]=='X'){
+                return true;
+            }
+        }
+        return false;
+    }
+}
