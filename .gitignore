@@ -1,2 +1,4 @@
 # Ignorer les fichiers .DS_Store générés par macOS
 *.DS_Store
+# Ignorer les paquets installés dans mon environnement virtuel
+env/
