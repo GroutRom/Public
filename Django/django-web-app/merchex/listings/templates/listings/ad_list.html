@@ -1,0 +1,16 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Mes annonces</h1>
+
+<ul>
+	{% for ad in ads %}
+	<li><a href="{% url 'ad-detail' ad.id %}">{{ad.title}}</a>
+		- <a href="{% url 'ad-update' ad.id %}" class="edit">[Modifier]</a>
+	</li>
+	{% endfor %}
+</ul>
+<a href="{% url 'ad-create' %}" class="return">Créer une nouvelle annonce</a>
+
+{% endblock %}

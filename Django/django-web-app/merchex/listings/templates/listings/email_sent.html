@@ -1,0 +1,10 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<div class="confirmation-container">
+    <h1>Confirmation</h1>
+    <p>Votre formulaire a été soumis avec succès.</p>
+    <p>Un email de confirmation a été envoyé.</p>
+    <a href="{% url 'band-list' %}" class="return">Retour à l'accueil</a>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h2>{{ad.title}}</h2>
+
+<ul>
+	<li>Description : {{ad.description}}</li>
+	<li>Vendu : {{ad.sold | yesno }}</li>
+	<li>Année : {{ad.year}}</li>
+	<li>Type : {{ad.types}}</li>
+	{% if ad.band %}
+	<li>Groupe : {{ad.band}}</li>
+	{% endif %}
+</ul>
+<a href="{% url 'ad-update' ad.id %}" class="submit">Modifier</a>
+<a href="{% url 'ad-delete' ad.id %}" class="delete">Supprimer</a>
+<a href="{% url 'ad-list' %}" class="return">Retour à toutes les annonces</a>
+{% endblock %}

@@ -1,0 +1,129 @@
+/* Réinitialiser les marges et les paddings */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #15202b;
+    color: #ffffff;
+}
+
+nav {
+	background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Style du conteneur principal */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Style des en-têtes */
+h1 {
+    font-size: 34px;
+    color: #1da1f2;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #1da1f2;
+    margin-bottom: 20px;
+}
+
+/* Style des listes */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #38444d;
+}
+
+ul li:hover {
+    background-color: #253341;
+    cursor: pointer;
+}
+
+/* Style des paragraphes */
+p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-top: 20px;
+    color: #8899a6;
+}
+
+/* Style des liens */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Style des liens au survol */
+a:hover {
+    text-decoration: underline;
+}
+
+.return {
+	display: flex;
+    margin-top: 50px;
+    color: #1da1f2;
+}
+
+.submit {
+    display: inline-block;
+    margin-top: 50px;
+    background-color: #1da1f2; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Enlever les bordures */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 4px; /* Bordure arrondie */
+    font-size: 16px; /* Taille de police */
+    cursor: pointer; /* Curseur au survol */
+}
+
+.submit:hover {
+    background-color: #1481b4; /* Couleur de fond au survol */
+}
+
+.delete {
+    display: inline-block;
+    margin-top: 50px;
+    background-color: #f21d37; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Enlever les bordures */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 4px; /* Bordure arrondie */
+    font-size: 16px; /* Taille de police */
+    cursor: pointer; /* Curseur au survol */
+}
+
+.delete:hover {
+    background-color: #cb1737; /* Couleur de fond au survol */
+}
+
+.edit {
+    font-size :14px;
+    color: #1da1f2;
+    margin-top: 20px;
+}
+
+.errorlist { 
+    
+    margin-bottom: -10px;
+
+}
+

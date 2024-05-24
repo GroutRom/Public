@@ -1,0 +1,12 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+	
+<h1>Mise à jour de l'annonce</h1>
+
+<form action="" method="post">
+	{%csrf_token%}
+	{{form.as_p}}
+	<input type="submit" name="Envoyer" class="submit">
+</form>
+{% endblock %}
