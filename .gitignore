@@ -1,4 +1,20 @@
 # Ignorer les fichiers .DS_Store générés par macOS
 *.DS_Store
+
 # Ignorer les paquets installés dans mon environnement virtuel
 env/
+myenv/
+.env
+
+# Ignorer les fichier zip
+*.zip
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore compiled files
+*.pyc
+*.class
